@@ -1,0 +1,15 @@
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\bin\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.deps.json
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\bin\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.runtimeconfig.json
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\bin\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.runtimeconfig.dev.json
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\bin\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.dll
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\bin\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.pdb
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\bin\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.Entities.dll
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\bin\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.Entities.pdb
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.csprojAssemblyReference.cache
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.AssemblyInfoInputs.cache
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.AssemblyInfo.cs
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.csproj.CopyComplete
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.dll
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.pdb
+C:\Users\SE\source\repos\UdemyJwtProject\SEProject.UdemyJwtProject.DataAccess\obj\Debug\netcoreapp3.1\SEProject.UdemyJwtProject.DataAccess.genruntimeconfig.cache
