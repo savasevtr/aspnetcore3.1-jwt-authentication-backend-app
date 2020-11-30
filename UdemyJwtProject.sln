@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProject.UdemyJwtProject.E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProject.UdemyJwtProject.DataAccess", "SEProject.UdemyJwtProject.DataAccess\SEProject.UdemyJwtProject.DataAccess.csproj", "{1FFC1E28-026C-4C91-A8EB-8743AA587F06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.UdemyJwtProject.Business", "SEProject.UdemyJwtProject.Business\SEProject.UdemyJwtProject.Business.csproj", "{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProject.UdemyJwtProject.Business", "SEProject.UdemyJwtProject.Business\SEProject.UdemyJwtProject.Business.csproj", "{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.UdemyJwtProject.WebApi", "SEProject.UdemyJwtProject.WebApi\SEProject.UdemyJwtProject.WebApi.csproj", "{E5C3E9DB-E019-4642-A039-7A46E6101535}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5C3E9DB-E019-4642-A039-7A46E6101535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5C3E9DB-E019-4642-A039-7A46E6101535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5C3E9DB-E019-4642-A039-7A46E6101535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5C3E9DB-E019-4642-A039-7A46E6101535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

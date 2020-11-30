@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SEProject.UdemyJwtProject.DataAccess\SEProject.UdemyJwtProject.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>
