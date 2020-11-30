@@ -4,5 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SEProject.UdemyJwtProject.Business\SEProject.UdemyJwtProject.Business.csproj" />
+  </ItemGroup>
+
 
 </Project>
