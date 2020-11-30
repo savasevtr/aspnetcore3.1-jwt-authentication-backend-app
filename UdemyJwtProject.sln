@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.UdemyJwtProject.Entities", "SEProject.UdemyJwtProject.Entities\SEProject.UdemyJwtProject.Entities.csproj", "{4D889E1D-8C19-4758-B188-CCBED2BEEFBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProject.UdemyJwtProject.Entities", "SEProject.UdemyJwtProject.Entities\SEProject.UdemyJwtProject.Entities.csproj", "{4D889E1D-8C19-4758-B188-CCBED2BEEFBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.UdemyJwtProject.DataAccess", "SEProject.UdemyJwtProject.DataAccess\SEProject.UdemyJwtProject.DataAccess.csproj", "{1FFC1E28-026C-4C91-A8EB-8743AA587F06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEProject.UdemyJwtProject.DataAccess", "SEProject.UdemyJwtProject.DataAccess\SEProject.UdemyJwtProject.DataAccess.csproj", "{1FFC1E28-026C-4C91-A8EB-8743AA587F06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEProject.UdemyJwtProject.Business", "SEProject.UdemyJwtProject.Business\SEProject.UdemyJwtProject.Business.csproj", "{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1FFC1E28-026C-4C91-A8EB-8743AA587F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FFC1E28-026C-4C91-A8EB-8743AA587F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FFC1E28-026C-4C91-A8EB-8743AA587F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB7E910-AEF0-48EE-8F78-3DB67247BD7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
