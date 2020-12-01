@@ -1,16 +1,11 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using SEProject.UdemyJwtProject.Business.DependencyResolvers.MicrosoftIoc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SEProject.UdemyJwtProject.WebApi.CustomFilters;
 
 namespace SEProject.UdemyJwtProject.WebApi
 {
@@ -27,6 +22,7 @@ namespace SEProject.UdemyJwtProject.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDependencies();
+            services.AddScoped(typeof(ValidId<>));
             services.AddControllers().AddFluentValidation();
         }
 

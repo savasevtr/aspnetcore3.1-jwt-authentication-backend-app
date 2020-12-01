@@ -29,6 +29,8 @@ namespace SEProject.UdemyJwtProject.Business.DependencyResolvers.MicrosoftIoc
             services.AddScoped<IAppUserRoleDal, EfAppUserRoleRepository>();
 
             services.AddTransient<IValidator<ProductAddDto>, ProductAddDtoValidator>();
+            services.AddTransient<IValidator<ProductUpdateDto>, ProductUpdateDtoValidator>();
+
         }
     }
 }
