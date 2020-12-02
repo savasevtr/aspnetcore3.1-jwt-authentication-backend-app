@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.UdemyJwtProject.Business.Interfaces;
 using SEProject.UdemyJwtProject.Entities.Concrete;
@@ -69,6 +70,15 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
             await _productService.Remove(new Product() { Id = id });
 
             return NoContent();
+        }
+
+        [Route("/error")]
+        public IActionResult Error()
+        {
+            // for log
+            var errorInfo = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+
+            return Problem(detail: "server error for api");
         }
     }
 }
