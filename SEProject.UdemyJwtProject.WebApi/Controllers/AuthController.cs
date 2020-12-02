@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using SEProject.UdemyJwtProject.Business.Interfaces;
+using SEProject.UdemyJwtProject.Entities.Concrete;
 using SEProject.UdemyJwtProject.Entities.Dtos.AppUserDtos;
 using SEProject.UdemyJwtProject.WebApi.CustomFilters;
 using System.Threading.Tasks;
@@ -12,14 +14,16 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
     {
         private readonly IJwtService _jwtService;
         private readonly IAppUserService _appUserService;
+        private readonly IMapper _mapper;
 
-        public AuthController(IJwtService jwtService, IAppUserService appUserService)
+        public AuthController(IJwtService jwtService, IAppUserService appUserService, IMapper mapper)
         {
             _jwtService = jwtService;
             _appUserService = appUserService;
+            _mapper = mapper;
         }
 
-        [HttpGet("[action]")]
+        [HttpPost("[action]")]
         [ValidModel]
         public async Task<IActionResult> SignIn(AppUserLoginDto appUserLoginDto)
         {
@@ -43,6 +47,22 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
 
                 return BadRequest("kullanıcı adı veya şifre hatalı");
             }
+        }
+
+        [HttpPost("[action]")]
+        [ValidModel]
+        public async Task<IActionResult> SignUp(AppUserAddDto appUserAddDto)
+        {
+            var appUser = await _appUserService.FindByUserName(appUserAddDto.UserName);
+
+            if (appUser != null)
+            {
+                return BadRequest($"{appUserAddDto.UserName} kullanıcı adı zaten kayıtlı");
+            }
+
+            await _appUserService.Add(_mapper.Map<AppUser>(appUserAddDto));
+
+            return Created("", appUserAddDto);
         }
     }
 }

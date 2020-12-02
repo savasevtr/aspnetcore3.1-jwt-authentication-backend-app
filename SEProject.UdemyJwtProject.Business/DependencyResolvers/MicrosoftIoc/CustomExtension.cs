@@ -35,6 +35,7 @@ namespace SEProject.UdemyJwtProject.Business.DependencyResolvers.MicrosoftIoc
             services.AddTransient<IValidator<ProductUpdateDto>, ProductUpdateDtoValidator>();
 
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
+            services.AddTransient<IValidator<AppUserAddDto>, AppUserAddDtoValidator>();
         }
     }
 }
