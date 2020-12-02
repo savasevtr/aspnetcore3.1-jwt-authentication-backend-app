@@ -5,6 +5,7 @@ using SEProject.UdemyJwtProject.Business.Interfaces;
 using SEProject.UdemyJwtProject.Business.ValidationRules.FluentValidation;
 using SEProject.UdemyJwtProject.DataAccess.Concrete.EntityFrameworkCore.Repositories;
 using SEProject.UdemyJwtProject.DataAccess.Interfaces;
+using SEProject.UdemyJwtProject.Entities.Dtos.AppUserDtos;
 using SEProject.UdemyJwtProject.Entities.Dtos.ProductDtos;
 
 namespace SEProject.UdemyJwtProject.Business.DependencyResolvers.MicrosoftIoc
@@ -28,9 +29,12 @@ namespace SEProject.UdemyJwtProject.Business.DependencyResolvers.MicrosoftIoc
             services.AddScoped<IAppUserRoleService, AppUserRoleManager>();
             services.AddScoped<IAppUserRoleDal, EfAppUserRoleRepository>();
 
+            services.AddScoped<IJwtService, JwtManager>();
+
             services.AddTransient<IValidator<ProductAddDto>, ProductAddDtoValidator>();
             services.AddTransient<IValidator<ProductUpdateDto>, ProductUpdateDtoValidator>();
 
+            services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
         }
     }
 }

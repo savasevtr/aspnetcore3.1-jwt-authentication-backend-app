@@ -12,7 +12,7 @@ namespace SEProject.UdemyJwtProject.Business.Concrete
 {
     public class JwtManager : IJwtService
     {
-        public string GenerateJwtToken(AppUser appUser, List<AppRole> appRoles)
+        public string GenerateJwt(AppUser appUser, List<AppRole> appRoles)
         {
             SymmetricSecurityKey symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtInfo.SecurityKey));
 
@@ -39,7 +39,7 @@ namespace SEProject.UdemyJwtProject.Business.Concrete
             claims.Add(new Claim(ClaimTypes.Name, appUser.UserName));
             claims.Add(new Claim(ClaimTypes.NameIdentifier, appUser.Id.ToString()));
 
-            if (appRoles.Count > 0)
+            if (appRoles?.Count > 0)
             {
                 foreach (var appRole in appRoles)
                 {
