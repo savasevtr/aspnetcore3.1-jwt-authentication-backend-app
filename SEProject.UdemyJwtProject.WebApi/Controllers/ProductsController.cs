@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.UdemyJwtProject.Business.Interfaces;
+using SEProject.UdemyJwtProject.Business.StringInfos;
 using SEProject.UdemyJwtProject.Entities.Concrete;
 using SEProject.UdemyJwtProject.Entities.Dtos.ProductDtos;
 using SEProject.UdemyJwtProject.WebApi.CustomFilters;
@@ -24,6 +26,7 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
 
         //api/products
         [HttpGet]
+        [Authorize(Roles = RoleInfo.Admin + "," + RoleInfo.Member)]
         public async Task<IActionResult> GetAll()
         {
             var products = await _productService.GetAll();
@@ -33,6 +36,7 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
 
         //api/products/3
         [HttpGet("{id}")]
+        [Authorize(Roles = RoleInfo.Admin)]
         [ServiceFilter(typeof(ValidId<Product>))]
         public async Task<IActionResult> GetById(int id)
         {
@@ -47,6 +51,7 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleInfo.Admin)]
         [ValidModel]
         public async Task<IActionResult> Add(ProductAddDto productAddDto)
         {
@@ -56,6 +61,7 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = RoleInfo.Admin)]
         [ValidModel]
         public async Task<IActionResult> Update(ProductUpdateDto productUpdateDto)
         {

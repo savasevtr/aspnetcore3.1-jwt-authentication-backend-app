@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.UdemyJwtProject.Business.Interfaces;
 using SEProject.UdemyJwtProject.Business.StringInfos;
 using SEProject.UdemyJwtProject.Entities.Concrete;
 using SEProject.UdemyJwtProject.Entities.Dtos.AppUserDtos;
+using SEProject.UdemyJwtProject.Entities.Token;
 using SEProject.UdemyJwtProject.WebApi.CustomFilters;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace SEProject.UdemyJwtProject.WebApi.Controllers
@@ -16,6 +19,8 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
         private readonly IJwtService _jwtService;
         private readonly IAppUserService _appUserService;
         private readonly IMapper _mapper;
+
+        public object JwtAccessToken { get; private set; }
 
         public AuthController(IJwtService jwtService, IAppUserService appUserService, IMapper mapper)
         {
@@ -41,9 +46,10 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
                 {
                     var roles = await _appUserService.GetRolesByUserName(appUserLoginDto.UserName);
 
-                    var token = _jwtService.GenerateJwt(appUser, roles);
+                    JwtAccessToken jwtAccessToken = new JwtAccessToken();
+                    jwtAccessToken.Token = _jwtService.GenerateJwt(appUser, roles);
 
-                    return Created("", token);
+                    return Created("", jwtAccessToken);
                 }
 
                 return BadRequest("kullanıcı adı veya şifre hatalı");
@@ -72,9 +78,24 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
                 AppUserId = user.Id
             });
 
-
-
             return Created("", appUserAddDto);
+        }
+
+        [HttpGet("[action]")]
+        [Authorize]
+        public async Task<IActionResult> ActiveUser()
+        {
+            var user = await _appUserService.FindByUserName(User.Identity.Name);
+            var roles = await _appUserService.GetRolesByUserName(User.Identity.Name);
+
+            AppUserDto appUserDto = new AppUserDto
+            {
+                FullName = user.FullName,
+                UserName = user.UserName,
+                Roles = roles.Select(I => I.Name).ToList()
+            };
+
+            return Ok(appUserDto);
         }
     }
 }
