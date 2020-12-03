@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using SEProject.UdemyJwtProject.Business.DependencyResolvers.MicrosoftIoc;
+using SEProject.UdemyJwtProject.Business.Interfaces;
 using SEProject.UdemyJwtProject.Business.StringInfos;
 using SEProject.UdemyJwtProject.WebApi.CustomFilters;
 using System;
@@ -47,14 +48,22 @@ namespace SEProject.UdemyJwtProject.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
+        public void Configure(
+            IApplicationBuilder app,
+            IWebHostEnvironment env,
+            IAppUserService appUserService,
+            IAppUserRoleService appUserRoleService,
+            IAppRoleService appRoleService
+        ) {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
             app.UseExceptionHandler("/Error");
+
+            JwtIdentityInitializer.Seed(appUserService, appUserRoleService, appRoleService).Wait();
 
             app.UseRouting();
             app.UseAuthentication();

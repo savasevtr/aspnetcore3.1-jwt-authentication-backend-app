@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SEProject.UdemyJwtProject.Business.Interfaces;
+using SEProject.UdemyJwtProject.Business.StringInfos;
 using SEProject.UdemyJwtProject.Entities.Concrete;
 using SEProject.UdemyJwtProject.Entities.Dtos.AppUserDtos;
 using SEProject.UdemyJwtProject.WebApi.CustomFilters;
@@ -51,7 +52,7 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
 
         [HttpPost("[action]")]
         [ValidModel]
-        public async Task<IActionResult> SignUp(AppUserAddDto appUserAddDto)
+        public async Task<IActionResult> SignUp(AppUserAddDto appUserAddDto, [FromServices] IAppUserRoleService appUserRoleService, [FromServices] IAppRoleService appRoleService)
         {
             var appUser = await _appUserService.FindByUserName(appUserAddDto.UserName);
 
@@ -61,6 +62,17 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
             }
 
             await _appUserService.Add(_mapper.Map<AppUser>(appUserAddDto));
+
+            var user = await _appUserService.FindByUserName(appUserAddDto.UserName);
+            var role = await appRoleService.FindByName(RoleInfo.Member);
+
+            await appUserRoleService.Add(new AppUserRole
+            {
+                AppRoleId = role.Id,
+                AppUserId = user.Id
+            });
+
+
 
             return Created("", appUserAddDto);
         }
