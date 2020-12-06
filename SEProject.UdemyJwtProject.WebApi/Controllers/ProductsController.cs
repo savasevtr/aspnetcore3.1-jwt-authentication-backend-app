@@ -70,7 +70,7 @@ namespace SEProject.UdemyJwtProject.WebApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _productService.Remove(new Product() { Id = id });
